@@ -1,9 +1,13 @@
 package com.example.reservationsystem.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
-@Table(name = "room")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Room {
 
     @Id
@@ -11,11 +15,10 @@ public class Room {
     private Long idRoom;
 
     private int number;
-
     private int capacity;
+    private boolean isAvailable;
 
     @ManyToOne
     @JoinColumn(name = "idhotel")
     private Hotel hotel;
-
 }

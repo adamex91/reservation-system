@@ -1,26 +1,33 @@
 package com.example.reservationsystem.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
-import jakarta.persistence.*;
+import lombok.*;
 import java.sql.Date;
-@Entity
 
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Reservation {
 
     @Id
-    long idreservation;
-    String status;
-    Date startdate;
-    Date finishdate;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // brakowało tego!
+    private Long idreservation;
+
+    private String status;
+    @Column(name = "start date")  // dokładna nazwa kolumny z bazy
+    private Date startdate;
+
+    @Column(name = "finish date")  // dokładna nazwa kolumny z bazy
+    private Date finishdate;
+
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id_Users") // poprawiona nazwa kolumny zgodna z bazą
     private User user;
+
     @ManyToOne
     @JoinColumn(name = "idhotel")
     private Hotel hotel;
+
 }
