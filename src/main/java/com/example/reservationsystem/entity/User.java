@@ -1,5 +1,9 @@
 package com.example.reservationsystem.entity;
 
+
+import jakarta.persistence.*;
+import lombok.*;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,18 +15,21 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
+@Table(name = "users")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idUsers")
     private Long idUsers;
 
-    private String firstName;
-    private String lastName;
+    @Column(name = "name")
+    private String name;
 
-
-
+    @Column(name = "surname")
+    private String surname;
 }

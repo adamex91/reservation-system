@@ -12,18 +12,18 @@ import java.sql.Date;
 public class Reservation {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // brakowało tego!
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idreservation;
 
     private String status;
-    @Column(name = "start date")  // dokładna nazwa kolumny z bazy
+    @Column(name = "start date")
     private Date startdate;
 
-    @Column(name = "finish date")  // dokładna nazwa kolumny z bazy
+    @Column(name = "finish date")
     private Date finishdate;
 
     @ManyToOne
-    @JoinColumn(name = "id_Users") // poprawiona nazwa kolumny zgodna z bazą
+    @JoinColumn(name = "id_Users")
     private User user;
 
     @ManyToOne

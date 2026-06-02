@@ -44,9 +44,4 @@ public class RoomService {
         return roomRepository.findById(roomId)
                 .orElseThrow(() -> new RuntimeException("Nie znaleziono pokoju o ID: " + roomId));
     }
-
-    public boolean isRoomAvailable(Long roomId) {
-        Room room = getRoomById(roomId);
-        return room.isAvailable();
-    }
 }

@@ -16,7 +16,6 @@ public class Room {
 
     private int number;
     private int capacity;
-    private boolean isAvailable;
 
     @ManyToOne
     @JoinColumn(name = "idhotel")
