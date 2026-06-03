@@ -39,13 +39,13 @@ public class ReservationController {
         return reservationService.create(reservation);
     }
 
-    @GetMapping("/reservation/hotel{id}")
-    public List<Reservation> findByHotelId(Long hotelId) {
+    @GetMapping("/reservation/hotel/{hotelId}")
+    public List<Reservation> findByHotelId(@PathVariable Long hotelId) {
         return reservationService.findByHotelId(hotelId);
     }
 
-    @GetMapping("/reservation/user/{id}")
-    public List<Reservation>   findByUserId(Long userId) {
+    @GetMapping("/reservation/user/{userId}")
+    public List<Reservation>   findByUserId(@PathVariable Long userId) {
         return reservationService.findByUserId(userId);
     }
 }
