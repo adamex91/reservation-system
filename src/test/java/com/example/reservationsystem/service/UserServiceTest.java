@@ -7,7 +7,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
 import java.util.Optional;
-
+import org.junit.jupiter.api.BeforeEach;
+import org.mockito.MockitoAnnotations;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.*;
@@ -21,6 +22,11 @@ public class UserServiceTest {
 
     @InjectMocks
     private Userservice userservice;
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+    }
 
     @Test
     void createuser_shouldsaveuser(){

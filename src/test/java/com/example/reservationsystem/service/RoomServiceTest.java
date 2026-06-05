@@ -8,7 +8,8 @@ import com.example.reservationsystem.repository.RoomRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-
+import org.junit.jupiter.api.BeforeEach;
+import org.mockito.MockitoAnnotations;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
@@ -20,6 +21,10 @@ public class RoomServiceTest {
     private RoomRepository roomRepository;
  @InjectMocks
     private RoomService roomService;
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+    }
 @Test
 void checkifdeleteroomdeleteroombyid(){
     Room room=new Room();
